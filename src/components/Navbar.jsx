@@ -6,6 +6,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { label: "Home", path: "/" },
+  { label: "About Us", path: "/about" },
   { label: "Our Spaces", path: "/spaces" },
   { label: "Facilities", path: "/facilities" },
   { label: "Gallery", path: "/gallery" },
@@ -21,7 +22,7 @@ export default function Navbar({ theme, toggleTheme }) {
 
   return (
     <header className="site-header">
-      <nav className="navbar container">
+      <nav className="navbar container" aria-label="Main navigation">
         <Link to="/" className="brand" onClick={closeMenu}>
           <span className="brand-mark">R</span>
           <span className="brand-name">
@@ -39,28 +40,31 @@ export default function Navbar({ theme, toggleTheme }) {
             onClick={() => setMenuOpen((open) => !open)}
             aria-label={menuOpen ? "Close navigation" : "Open navigation"}
             aria-expanded={menuOpen}
+            aria-controls="primary-navigation"
           >
             {menuOpen ? <X size={23} /> : <Menu size={23} />}
           </button>
         </div>
 
-        <div className={`nav-links ${menuOpen ? "nav-links-open" : ""}`}>
-          {links.map((link) => (
+        <div
+          id="primary-navigation"
+          className={`nav-links${menuOpen ? " nav-links-open" : ""}`}
+        >
+          {links.map(({ label, path }) => (
             <NavLink
-              key={link.path}
-              to={link.path}
-              end={link.path === "/"}
+              key={path}
+              to={path}
+              end={path === "/"}
               onClick={closeMenu}
               className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""}`
+                `nav-link${isActive ? " active" : ""}`
               }
             >
-              {link.label}
+              {label}
             </NavLink>
           ))}
 
           <div className="nav-actions">
-  <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
             <Link
               to="/contact"
               className="button button-primary nav-cta"
@@ -69,6 +73,10 @@ export default function Navbar({ theme, toggleTheme }) {
               Make an enquiry <ArrowUpRight size={16} />
             </Link>
           </div>
+        </div>
+
+        <div className="desktop-theme-toggle">
+          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
         </div>
       </nav>
     </header>

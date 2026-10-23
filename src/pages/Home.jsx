@@ -16,75 +16,84 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
+
+
+
 const slides = [
   {
-    eyebrow: "YOUR MOMENT. OUR SPACE.",
-    title: "Make room for extraordinary.",
+    eyebrow: "GREAT FOR EVENING LOOK & AMBIENCE",
+    title: "An entrance worth remembering.",
     description:
-      "From milestone celebrations to memorable corporate gatherings, give your next event a setting worth remembering.",
+      "Experience an inviting atmosphere where the setting makes a lasting first impression.",
     image:
       "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=2200&q=85",
     position: "center 55%",
   },
   {
-    eyebrow: "A SETTING THAT IMPRESSES.",
-    title: "Bring your vision to life.",
+    eyebrow: "MULTIPURPOSE FULLY EQUIPPED STAGE",
+    title: "Every moment deserves the spotlight.",
     description:
-      "Thoughtfully designed spaces give your ideas the room, atmosphere and presence they deserve.",
+      "Bring your event to life with a stage designed for presentations, performances and memorable moments.",
+    image:
+      "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=2200&q=85",
+    position: "center 55%",
+  },
+  {
+    eyebrow: "SOUNDPROOFING",
+    title: "Sound that stays in its place.",
+    description:
+      "Discover acoustic wall treatment designed to support a more controlled hall environment.",
+
+image:
+  "https://images.openai.com/static-rsc-4/-5IMavZAH2Z6k3S9DLEqTOE3eUDqqMVt77HGgGexqNtnzp7BtloMMzrd5EspUaG-RGPjzeR4zC3-hch9mo4OUVkspTe7m2M4R-Rn5krUcWFm8hroPEZpPUe2h4Lz3gVbx_E3_x78wNONcfpNNteXcq-O60_cmSmlFJ5Lu1_cdPc?purpose=inline",
+
+    position: "center 55%",
+  },
+  {
+    eyebrow: "LUXURY OR NOTHING",
+    title: "Make room for a grand experience.",
+    description:
+      "A welcoming interior and considered seating create the setting for occasions worth celebrating.",
     image:
       "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=2200&q=85",
     position: "center 55%",
   },
-  {
-    eyebrow: "EVERY DETAIL. IN HARMONY.",
-    title: "The stage is yours.",
-    description:
-      "Create the right atmosphere for your guests with a venue built around the experience.",
-    image:
-      "https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=2200&q=85",
-    position: "center 55%",
-  },
-  {
-    eyebrow: "GATHER. CELEBRATE. CONNECT.",
-    title: "Make every gathering count.",
-    description:
-      "A versatile destination for weddings, celebrations, conferences and the moments that bring people together.",
-    image:
-      "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=2200&q=85",
-    position: "center 55%",
-  },
 ];
+
+
+
+
 
 const facilities = [
   {
     icon: Volume2,
-    title: "Sound-conscious spaces",
-    text: "A setting designed with the event atmosphere in mind.",
+    title: "Soundproofing",
+    text: "A sound-conscious hall environment for a more focused event experience.",
   },
   {
     icon: Monitor,
-    title: "Visual presentation",
-    text: "Space for screens, presentations and event production.",
+    title: "Screens & displays",
+    text: "Visual presentation options for ceremonies, events and conferences.",
   },
   {
     icon: Snowflake,
     title: "Guest comfort",
-    text: "Comfort-focused facilities for your guests and attendees.",
+    text: "Comfort and convenience for your guests throughout the event.",
   },
   {
     icon: CarFront,
-    title: "Arrival & parking",
-    text: "Make arrival and access part of a smoother event experience.",
+    title: "Parking & access",
+    text: "Ask our team about guest parking and arrival arrangements.",
   },
   {
     icon: Zap,
-    title: "Power support",
-    text: "Ask our team about power arrangements for your event.",
+    title: "Power arrangements",
+    text: "Discuss power requirements and backup arrangements for your event.",
   },
   {
     icon: Sparkles,
-    title: "Flexible occasions",
-    text: "A versatile setting for celebrations and professional events.",
+    title: "Versatile event spaces",
+    text: "Venue options for celebrations, private gatherings and professional events.",
   },
 ];
 
