@@ -23,13 +23,27 @@ export default function Navbar({ theme, toggleTheme }) {
   return (
     <header className="site-header">
       <nav className="navbar container" aria-label="Main navigation">
-        <Link to="/" className="brand" onClick={closeMenu}>
-          <span className="brand-mark">R</span>
-          <span className="brand-name">
-            THE RIDGE
-            <small>EVENT CENTRE</small>
+        <Link
+          to="/"
+          className="brand brand-logo"
+          onClick={closeMenu}
+          aria-label="The Ridge home"
+        >
+          <span className="brand-logo-art">
+            <img
+              src="/images/the-ridge-logo.png"
+              alt=""
+              className="brand-logo-image"
+            />
+          </span>
+          <span className="brand-tagline">
+            ...the unique event centre
           </span>
         </Link>
+
+        <div className="desktop-theme-toggle">
+          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+        </div>
 
         <div className="mobile-header-actions">
           <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
@@ -73,10 +87,6 @@ export default function Navbar({ theme, toggleTheme }) {
               Make an enquiry <ArrowUpRight size={16} />
             </Link>
           </div>
-        </div>
-
-        <div className="desktop-theme-toggle">
-          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
         </div>
       </nav>
     </header>

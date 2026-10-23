@@ -5119,3 +5119,125 @@ body {
     height: 340px;
   }
 }
+
+/* The Ridge official logo */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.brand-logo-image {
+  display: block;
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .brand-logo-image {
+    width: 150px;
+  }
+}
+
+/* The Ridge header alignment and responsive logo */
+.brand-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 0;
+  text-decoration: none;
+}
+
+.brand-logo-art {
+  display: block;
+  width: 220px;
+  height: 49px;
+  overflow: hidden;
+}
+
+.brand-logo-image {
+  display: block;
+  width: 220px;
+  max-width: none;
+  height: auto;
+  object-fit: contain;
+  object-position: top left;
+}
+
+.brand-tagline {
+  display: block;
+  margin-top: -2px;
+  padding-left: 7px;
+  color: var(--text-primary, #171717);
+  background-color: transparent;
+  font-family: Georgia, serif;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.2;
+  transition: color 200ms ease;
+}
+
+/* Support common theme attributes */
+[data-theme="dark"] .brand-tagline,
+.dark .brand-tagline,
+.theme-dark .brand-tagline {
+  color: #fff;
+}
+
+[data-theme="light"] .brand-tagline,
+.light .brand-tagline,
+.theme-light .brand-tagline {
+  color: #171717;
+}
+
+@media (min-width: 901px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .desktop-theme-toggle {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    order: 2;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(14px, 1.5vw, 26px);
+    margin-left: auto;
+    order: 3;
+  }
+
+  .brand-logo {
+    order: 1;
+  }
+
+  .nav-actions {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .brand-logo-art {
+    width: 170px;
+    height: 39px;
+  }
+
+  .brand-logo-image {
+    width: 170px;
+  }
+
+  .brand-tagline {
+    font-size: 10px;
+  }
+}
