@@ -7,11 +7,21 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="container footer-main">
         <div className="footer-brand">
-          <Link to="/" className="brand">
-            <span className="brand-mark">R</span>
-            <span className="brand-name">
-              THE RIDGE
-              <small>EVENT CENTRE</small>
+          <Link
+            to="/"
+            className="brand brand-logo"
+            aria-label="The Ridge home"
+          >
+            <span className="brand-logo-art">
+              <img
+                src="/images/the-ridge-logo.png"
+                alt="The Ridge"
+                className="brand-logo-image"
+              />
+            </span>
+
+            <span className="brand-tagline">
+              ...the unique event centre
             </span>
           </Link>
 
@@ -28,6 +38,7 @@ export default function Footer() {
         <div className="footer-column">
           <h4>Explore</h4>
           <Link to="/">Home</Link>
+          <Link to="/about">About Us</Link>
           <Link to="/spaces">Our Spaces</Link>
           <Link to="/facilities">Facilities</Link>
           <Link to="/gallery">Gallery</Link>
@@ -39,7 +50,9 @@ export default function Footer() {
 
           <p>
             <MapPin size={19} />
-            <span>Plot C22, Arugo Layout, Onitsha Road, Owerri, Imo State</span>
+            <span>
+              Plot C22, Arugo Layout, Onitsha Road, Owerri, Imo State
+            </span>
           </p>
 
           <p>
@@ -55,7 +68,10 @@ export default function Footer() {
       </div>
 
       <div className="container footer-bottom">
-        <span>© {new Date().getFullYear()} The Ridge Event Centre.</span>
+        <span>
+          © {new Date().getFullYear()} The Ridge Event Centre.
+        </span>
+
         <span>Designed for extraordinary experiences.</span>
       </div>
     </footer>
