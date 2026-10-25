@@ -16,9 +16,6 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-
-
-
 const slides = [
   {
     eyebrow: "GREAT FOR EVENING LOOK & AMBIENCE",
@@ -43,10 +40,8 @@ const slides = [
     title: "Sound that stays in its place.",
     description:
       "Discover acoustic wall treatment designed to support a more controlled hall environment.",
-
-image:
-  "https://images.openai.com/static-rsc-4/-5IMavZAH2Z6k3S9DLEqTOE3eUDqqMVt77HGgGexqNtnzp7BtloMMzrd5EspUaG-RGPjzeR4zC3-hch9mo4OUVkspTe7m2M4R-Rn5krUcWFm8hroPEZpPUe2h4Lz3gVbx_E3_x78wNONcfpNNteXcq-O60_cmSmlFJ5Lu1_cdPc?purpose=inline",
-
+    image:
+      "https://images.openai.com/static-rsc-4/-5IMavZAH2Z6k3S9DLEqTOE3eUDqqMVt77HGgGexqNtnzp7BtloMMzrd5EspUaG-RGPjzeR4zC3-hch9mo4OUVkspTe7m2M4R-Rn5krUcWFm8hroPEZpPUe2h4Lz3gVbx_E3_x78wNONcfpNNteXcq-O60_cmSmlFJ5Lu1_cdPc?purpose=inline",
     position: "center 55%",
   },
   {
@@ -59,10 +54,6 @@ image:
     position: "center 55%",
   },
 ];
-
-
-
-
 
 const facilities = [
   {
@@ -96,7 +87,6 @@ const facilities = [
     text: "Venue options for celebrations, private gatherings and professional events.",
   },
 ];
-
 
 const supportServices = [
   {
@@ -198,17 +188,16 @@ function CountUp({ target, suffix = "" }) {
     };
 
     frameId = requestAnimationFrame(animate);
-
     return () => cancelAnimationFrame(frameId);
   }, [started, target]);
 
   return (
     <span ref={counterRef} className="home-stat-number">
-      {count.toLocaleString("en-GB")}{suffix}
+      {count.toLocaleString("en-GB")}
+      {suffix}
     </span>
   );
 }
-
 
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -225,7 +214,9 @@ export default function Home() {
   }, [paused]);
 
   const previousSlide = () => {
-    setActiveSlide((current) => (current - 1 + slides.length) % slides.length);
+    setActiveSlide(
+      (current) => (current - 1 + slides.length) % slides.length
+    );
   };
 
   const nextSlide = () => {
@@ -258,7 +249,10 @@ export default function Home() {
               initial={{ opacity: 0, scale: 1.035 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ opacity: { duration: 1 }, scale: { duration: 7 } }}
+              transition={{
+                opacity: { duration: 1 },
+                scale: { duration: 7 },
+              }}
             />
           </AnimatePresence>
         </div>
@@ -297,7 +291,9 @@ export default function Home() {
 
           <div className="hero-bottom">
             <a className="hero-scroll" href="#introduction">
-              <span className="scroll-icon"><ArrowDown size={15} /></span>
+              <span className="scroll-icon">
+                <ArrowDown size={15} />
+              </span>
               Scroll to discover
             </a>
 
@@ -313,7 +309,9 @@ export default function Home() {
                   <button
                     key={slide.title}
                     type="button"
-                    className={`hero-dot ${index === activeSlide ? "active" : ""}`}
+                    className={`hero-dot ${
+                      index === activeSlide ? "active" : ""
+                    }`}
                     onClick={() => setActiveSlide(index)}
                     aria-label={`Show slide ${index + 1}`}
                     aria-pressed={index === activeSlide}
@@ -343,14 +341,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="intro-section section-padding" id="introduction">
+      <section
+        className="intro-section section-padding"
+        id="introduction"
+      >
         <div className="container intro-grid">
           <div>
             <p className="eyebrow">WELCOME TO THE RIDGE</p>
-            <h2 className="section-heading">
-              More than a venue.
-              <br />
-              <span>An experience.</span>
+
+            <h2 className="section-heading intro-title">
+              <span className="intro-title-main">
+                More than a venue.
+              </span>
+              <span className="intro-title-accent">
+                An experience.
+              </span>
             </h2>
           </div>
 
@@ -373,7 +378,9 @@ export default function Home() {
           <div className="section-topline">
             <div>
               <p className="eyebrow">FIND YOUR SETTING</p>
-              <h2 className="section-heading">Room for your kind of event.</h2>
+              <h2 className="section-heading">
+                Room for your kind of event.
+              </h2>
             </div>
 
             <Link to="/spaces" className="text-link">
@@ -388,6 +395,7 @@ export default function Home() {
                 alt="Elegant event hall arranged for a formal gathering"
                 loading="lazy"
               />
+
               <div className="space-card-overlay">
                 <span>01 / GRAND HALL</span>
                 <div>
@@ -403,6 +411,7 @@ export default function Home() {
                 alt="Intimate event space set for a special occasion"
                 loading="lazy"
               />
+
               <div className="space-card-overlay">
                 <span>02 / INTIMATE HALL</span>
                 <div>
@@ -419,15 +428,18 @@ export default function Home() {
         <div className="container">
           <div className="facilities-heading">
             <p className="eyebrow">THOUGHT THROUGH</p>
+
             <h2 className="section-heading">
               The details make
               <br />
               the difference.
             </h2>
+
             <p>
               A great event takes more than a beautiful room. Explore the
               practical features that help bring your plans together.
             </p>
+
             <Link to="/facilities" className="button button-primary">
               Explore facilities <ArrowUpRight size={17} />
             </Link>
@@ -436,10 +448,14 @@ export default function Home() {
           <div className="facility-grid">
             {facilities.map(({ icon: Icon, title, text }, index) => (
               <article className="facility-item" key={title}>
-                <div className="facility-icon"><Icon size={22} /></div>
+                <div className="facility-icon">
+                  <Icon size={22} />
+                </div>
+
                 <span className="facility-number">
                   {String(index + 1).padStart(2, "0")}
                 </span>
+
                 <h3>{title}</h3>
                 <p>{text}</p>
               </article>
@@ -448,18 +464,18 @@ export default function Home() {
         </div>
       </section>
 
-
       <section className="support-services section-padding">
         <div className="container">
           <div className="support-heading">
             <div>
               <p className="eyebrow">HERE FOR YOUR EVENT</p>
-              <h2 className="section-heading">
-                Our Customer Support
-                <br />
+
+              <h2 className="section-heading support-title">
+                <span>Our Customer Support</span>
                 <span>Services.</span>
               </h2>
             </div>
+
             <p>
               The Ridge Events Center offers a range of services to help
               your event run smoothly, from planning and coordination to
@@ -469,7 +485,10 @@ export default function Home() {
 
           <div className="support-service-grid">
             {supportServices.map((service) => (
-              <article className="support-service-card" key={service.number}>
+              <article
+                className="support-service-card"
+                key={service.number}
+              >
                 <div className="support-service-image">
                   <img
                     src={service.image}
@@ -500,11 +519,13 @@ export default function Home() {
         <div className="container">
           <div className="home-stats-heading">
             <p className="eyebrow">THE RIDGE EXPERIENCE</p>
+
             <h2>
               Every gathering has
               <br />
               a story to tell.
             </h2>
+
             <p>
               Creating memorable experiences, bringing people together
               and making every occasion count.
@@ -514,7 +535,10 @@ export default function Home() {
           <div className="home-stats-grid">
             {eventStats.map((stat) => (
               <article className="home-stat" key={stat.label}>
-                <CountUp target={stat.target} suffix={stat.suffix} />
+                <CountUp
+                  target={stat.target}
+                  suffix={stat.suffix}
+                />
                 <h3>{stat.label}</h3>
               </article>
             ))}
@@ -522,25 +546,27 @@ export default function Home() {
         </div>
       </section>
 
-
       <section className="achievements-section section-padding">
         <div className="container achievements-grid">
           <div className="achievements-copy">
             <p className="eyebrow">OUR JOURNEY SINCE 2017</p>
-            <h2 className="section-heading">
-              Achievements and
-              <br />
+
+            <h2 className="section-heading achievements-title">
+              <span>Achievements and</span>
               <span>Recognitions.</span>
             </h2>
+
             <p>
               Since opening in 2017, The Ridge Events Center has hosted
               numerous high-profile events, including conferences,
               weddings and other important gatherings.
             </p>
+
             <p>
               Since 2017, it has also been the base of the popular
               House on the Rock Church in Owerri.
             </p>
+
             <Link to="/contact" className="text-link">
               Plan your next event <ArrowRight size={17} />
             </Link>
@@ -552,6 +578,7 @@ export default function Home() {
               alt="Guests gathered at a professionally organised event"
               loading="lazy"
             />
+
             <div className="achievements-year">
               <span>ESTABLISHED</span>
               <strong>2017</strong>
@@ -560,13 +587,14 @@ export default function Home() {
         </div>
       </section>
 
-
       <section className="home-cta">
         <div className="container home-cta-inner">
           <div>
             <p className="eyebrow">YOUR EVENT STARTS HERE</p>
             <h2>Have something special in mind?</h2>
-            <p>Tell us what you're planning. Let's find the right setting.</p>
+            <p>
+              Tell us what you're planning. Let's find the right setting.
+            </p>
           </div>
 
           <Link to="/contact" className="button button-primary">

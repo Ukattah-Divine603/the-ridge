@@ -5241,3 +5241,340 @@ body {
     font-size: 10px;
   }
 }
+
+/* Homepage heading alignment */
+.intro-title,
+.support-title,
+.achievements-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  line-height: 1.1;
+  text-wrap: balance;
+  max-width: 100%;
+}
+
+.intro-title > span,
+.support-title > span,
+.achievements-title > span {
+  display: block;
+  margin: 0;
+  align-self: flex-start;
+}
+
+.intro-title .intro-title-main {
+  color: var(--text);
+}
+
+.intro-title .intro-title-accent {
+  color: var(--orange);
+}
+
+.support-heading {
+  align-items: flex-start;
+}
+
+.support-heading > div {
+  min-width: 0;
+  flex: 1 1 55%;
+}
+
+.support-heading > p {
+  flex: 0 1 430px;
+}
+
+.achievements-copy {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .support-heading {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .support-heading > p {
+    max-width: 600px;
+    flex: 0 1 auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .intro-title,
+  .support-title,
+  .achievements-title {
+    font-size: clamp(32px, 8vw, 42px);
+    letter-spacing: -1.2px;
+  }
+}
+
+
+/* =========================================
+   THE RIDGE — shared header refinement
+   ========================================= */
+
+.site-header {
+  width: 100%;
+}
+
+.navbar.container {
+  width: min(1400px, calc(100% - 48px));
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.5vw, 24px);
+}
+
+.brand-logo {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  margin-right: auto;
+}
+
+.brand-logo-art {
+  display: block;
+  width: clamp(155px, 15vw, 205px);
+  height: auto;
+  overflow: visible;
+}
+
+.brand-logo-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.brand-tagline {
+  margin-top: 2px;
+  padding-left: 5px;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.desktop-theme-toggle {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(10px, 1.15vw, 18px);
+  margin-left: 0;
+  min-width: 0;
+}
+
+.nav-link {
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.nav-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-cta {
+  white-space: nowrap;
+  padding: 12px 14px;
+  font-size: 12px;
+}
+
+.mobile-header-actions {
+  display: none;
+}
+
+@media (max-width: 1100px) and (min-width: 901px) {
+  .navbar.container {
+    gap: 12px;
+  }
+
+  .brand-logo-art {
+    width: 155px;
+  }
+
+  .brand-tagline {
+    font-size: 10px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 11px;
+  }
+
+  .nav-cta {
+    padding: 11px 10px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar.container {
+    min-height: 72px;
+    width: calc(100% - 32px);
+    position: relative;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .brand-logo {
+    margin-right: auto;
+    min-width: 0;
+  }
+
+  .brand-logo-art {
+    width: clamp(145px, 38vw, 175px);
+  }
+
+  .brand-tagline {
+    font-size: 10px;
+  }
+
+  .desktop-theme-toggle {
+    display: none;
+  }
+
+  .mobile-header-actions {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 8px;
+  }
+
+  .mobile-header-actions .theme-toggle,
+  .mobile-header-actions .mobile-menu-toggle {
+    display: grid;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -16px;
+    right: -16px;
+    z-index: 101;
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    margin: 0;
+    padding: 12px 20px 22px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border, rgba(128, 128, 128, 0.18));
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-links.nav-links-open {
+    display: flex;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 14px 4px;
+    font-size: 14px;
+    white-space: normal;
+    border-bottom: 1px solid var(--border, rgba(128, 128, 128, 0.12));
+  }
+
+  .nav-actions {
+    padding-top: 16px;
+  }
+
+  .nav-cta {
+    width: 100%;
+    min-height: 46px;
+    justify-content: center;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 380px) {
+  .navbar.container {
+    width: calc(100% - 24px);
+  }
+
+  .brand-logo-art {
+    width: 135px;
+  }
+
+  .mobile-header-actions {
+    gap: 6px;
+  }
+
+  .mobile-header-actions .theme-toggle,
+  .mobile-header-actions .mobile-menu-toggle {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Compact Ridge logo and theme-aware tagline */
+.brand-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  line-height: 1;
+}
+
+.brand-logo-art {
+  display: block;
+  width: clamp(145px, 15vw, 200px);
+  height: auto;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.brand-logo-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
+}
+
+.brand-tagline {
+  display: block;
+  margin: -2px 0 0 5px;
+  padding: 0;
+  line-height: 1.2;
+  font-size: 11px;
+}
+
+@media (max-width: 900px) {
+  .brand-logo-art {
+    width: clamp(135px, 36vw, 170px);
+  }
+
+  .brand-tagline {
+    margin-top: -1px;
+    font-size: 10px;
+  }
+}
